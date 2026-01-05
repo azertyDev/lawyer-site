@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 const navigation = [
 	{ name: 'Услуги', href: '/services' },
 	{ name: 'Практика', href: '/practice' },
+	{ name: 'Блог', href: '/blog' },
 	{ name: 'О юристе', href: '/about' },
 	{ name: 'Стоимость', href: '/fees' },
 	{ name: 'FAQ', href: '/faq' },

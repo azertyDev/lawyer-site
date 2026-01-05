@@ -18,11 +18,22 @@ module.exports = {
 		const priorities = {
 			'/': 1.0,
 			'/services': 0.9,
+			'/blog': 0.9,
 			'/contacts': 0.8,
 			'/fees': 0.8,
 			'/about': 0.7,
 			'/faq': 0.7,
 			'/practice': 0.7,
+		}
+
+		// Blog articles have high priority
+		if (path.startsWith('/blog/') && path !== '/blog') {
+			return {
+				loc: path,
+				changefreq: 'monthly',
+				priority: 0.8,
+				lastmod: new Date().toISOString(),
+			}
 		}
 
 		return {

@@ -16,6 +16,7 @@ const navigation = {
 	company: [
 		{ name: 'О юристе', href: '/about' },
 		{ name: 'Практика', href: '/practice' },
+		{ name: 'Блог', href: '/blog' },
 		{ name: 'Стоимость', href: '/fees' },
 		{ name: 'FAQ', href: '/faq' },
 		{ name: 'Контакты', href: '/contacts' },
