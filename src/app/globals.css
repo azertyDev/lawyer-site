@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 30 20% 98%;
+		--foreground: 220 30% 10%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 220 30% 10%;
+
+		--primary: 220 50% 10%;
+		--primary-foreground: 0 0% 100%;
+
+		--secondary: 30 10% 95%;
+		--secondary-foreground: 220 30% 10%;
+
+		--muted: 30 10% 95%;
+		--muted-foreground: 220 10% 45%;
+
+		--accent: 30 10% 92%;
+		--accent-foreground: 220 30% 10%;
+
+		--destructive: 0 84% 60%;
+		--destructive-foreground: 0 0% 100%;
+
+		--border: 220 13% 90%;
+		--input: 220 13% 85%;
+		--ring: 40 50% 50%;
+
+		--gold: 40 50% 50%;
+		--gold-foreground: 220 50% 10%;
+
+		--navy: 220 50% 10%;
+		--navy-50: 220 30% 97%;
+		--navy-100: 220 30% 94%;
+		--navy-200: 220 30% 85%;
+		--navy-800: 220 50% 15%;
+		--navy-900: 220 55% 8%;
+
+		--radius: 0.5rem;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+		font-feature-settings:
+			'rlig' 1,
+			'calt' 1;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-navy;
+	}
+}
+
+@layer utilities {
+	.safe-area-inset-bottom {
+		padding-bottom: env(safe-area-inset-bottom);
+	}
+
+	/* Hide scrollbar but allow scrolling */
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@keyframes accordion-down {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--radix-accordion-content-height);
+	}
+}
+
+@keyframes accordion-up {
+	from {
+		height: var(--radix-accordion-content-height);
+	}
+	to {
+		height: 0;
+	}
+}
+
+.animate-accordion-down {
+	animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+	animation: accordion-up 0.2s ease-out;
+}
+
+/* Slide up animation for cookie banner */
+@keyframes slide-up {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-slide-up {
+	animation: slide-up 0.4s ease-out forwards;
+}
+
+/* Scroll reveal animations */
+@keyframes reveal-up {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes reveal-left {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes reveal-right {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes reveal-scale {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.scroll-reveal {
+	opacity: 0;
+}
+
+.scroll-reveal.is-visible {
+	animation: reveal-up 0.6s ease-out forwards;
+}
+
+.scroll-reveal-left.is-visible {
+	animation: reveal-left 0.6s ease-out forwards;
+}
+
+.scroll-reveal-right.is-visible {
+	animation: reveal-right 0.6s ease-out forwards;
+}
+
+.scroll-reveal-scale.is-visible {
+	animation: reveal-scale 0.6s ease-out forwards;
+}
+
+/* Stagger delays for list items */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
