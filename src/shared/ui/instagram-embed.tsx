@@ -17,8 +17,23 @@ declare global {
 	}
 }
 
+const hideHoverCardStyles = `
+	.HoverCard {
+		display: none !important;
+	}
+`
+
 export function InstagramEmbed({ html, className }: InstagramEmbedProps) {
 	useEffect(() => {
+		// Add styles to hide HoverCard
+		const styleId = 'instagram-embed-styles'
+		if (!document.getElementById(styleId)) {
+			const style = document.createElement('style')
+			style.id = styleId
+			style.textContent = hideHoverCardStyles
+			document.head.appendChild(style)
+		}
+
 		// Load Instagram embed script if not already loaded
 		const existingScript = document.querySelector(
 			'script[src*="instagram.com/embed.js"]'
