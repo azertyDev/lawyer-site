@@ -6,6 +6,7 @@ import {
 	FAQSection,
 	Hero,
 	HowWeWorkSection,
+	InstagramSection,
 	PricingSection,
 	ServicesSection,
 } from '@/widgets'
@@ -36,6 +37,7 @@ export default function HomePage() {
 			<CasesSection />
 			<PricingSection />
 			<FAQSection items={faqItems} />
+			<InstagramSection />
 			<ContactsSection />
 		</>
 	)
